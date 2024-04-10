@@ -2,7 +2,7 @@ import { Text, TextInput, TouchableOpacity, View } from "react-native";
 
 import { styles } from "./style";
 
-export function Home() {
+export function Home () {
 
   function handleParticipantAdd() {
     console.log("handleParticipantAdd");
@@ -18,17 +18,19 @@ export function Home() {
         Wednesday, April, 10th, 2024
       </Text>
 
-      <TextInput
-        style={styles.input}
-        placeholder="Participant name"
-        placeholderTextColor="#6B6B6B"
-      />
+      <View style={styles.form}>
+        <TextInput
+          style={styles.input}
+          placeholder="Participant name"
+          placeholderTextColor="#6B6B6B"
+        />
 
-      <TouchableOpacity style={styles.button} onPress={handleParticipantAdd}>
-        <Text style={styles.buttonText}>
-          +
-        </Text>
-      </TouchableOpacity>
+        <TouchableOpacity style={styles.button} onPress={handleParticipantAdd}>
+          <Text style={styles.buttonText}>
+            +
+          </Text>
+        </TouchableOpacity>
+      </View>
     </View>
   )
 }
