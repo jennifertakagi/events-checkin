@@ -3,16 +3,19 @@ import { Alert, FlatList, Text, TextInput, TouchableOpacity, View } from "react-
 import { Participant } from "../../components/Participant";
 
 import { styles } from "./style";
+import { useState } from "react";
 
 export function Home () {
-  const participants = ['Ana Vargas', 'Chewie Bacca', 'Jennifer Takagi'];
+  const [participants, setParticipants] = useState<string[]>([]);
+  const [nameValue, setNameValue] = useState('');
 
   function handleParticipantAdd(name: string) {
     if (participants.includes(name)) {
       return Alert.alert("Participant exists", "There is already a participant in the list with that name.");
     }
 
-    participants.unshift(name);
+    setParticipants(prevState => [...prevState, name]);
+    setNameValue("")
    }
 
   function handleParticipantRemove(name: string) {
@@ -43,9 +46,11 @@ export function Home () {
           style={styles.input}
           placeholder="Participant name"
           placeholderTextColor="#6B6B6B"
+          onChangeText={setNameValue}
+          value={nameValue}
         />
 
-        <TouchableOpacity style={styles.button} onPress={() =>handleParticipantAdd("")}>
+        <TouchableOpacity style={styles.button} onPress={() =>handleParticipantAdd(nameValue)}>
           <Text style={styles.buttonText}>
             +
           </Text>
