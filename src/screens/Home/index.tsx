@@ -22,7 +22,7 @@ export function Home () {
     Alert.alert("Remove", `Remove the participant ${name}?`, [
       {
         text: 'Yes',
-        onPress: () => Alert.alert("Removed!")
+        onPress: () => setParticipants(prevState => prevState.filter(participant => participant !== name))
       },
       {
         text: 'No',
