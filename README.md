@@ -61,6 +61,8 @@
 
 Check in the participants of an event in the mobile app
 
+[![Product Name Screen Shot][product-screenshot]](#)
+
 Features:
 
 - Add participant to the event
@@ -159,3 +161,4 @@ Jennifer Takagi - [@jennitakagi](https://twitter.com/jennitakagi)
 [license-url]: https://github.com/jennifertakagi/events-checkin/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/jennifertakagi
+[product-screenshot]: docs/homepage.png
